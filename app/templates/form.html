@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title> QRCode generator! </title>
+  </head>
+  <body>
+    <h1> Welcome to this simple QRCode generator! </h1>
+    <p>
+      <label for="inp">
+        QRCode contents:
+      </label>
+      <input type="text" id="inp" name="inp"/>
+    </p>
+    <img id="qr" src="" alt="" width="400px" height="auto" />
+    <script>
+      var qr = document.getElementById('qr');
+      var inp = document.getElementById('inp');
+      function fetchcode(){
+        qr.src = '/qr?text='+inp.value;
+        console.log(qr.src);
+      }
+      inp.onkeyup = fetchcode;
+      fetchcode();
+    </script>
+  </body>
+</html>
